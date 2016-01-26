@@ -1,0 +1,19 @@
+#/sh/bin
+
+
+NDK=/home/chang/android/android-ndk-r10
+PREBUILT=/home/chang/toolchain/arm-linux-androidabi/bin
+PLATFORM=$NDK/platforms/android-19/arch-arm/
+# 编译的目录目录
+PREFIX=/media/工作/svnroot/wisdomBox/trunk/code/Thirdparty/speex-1.2rc1/armandroidbuild
+#PREFIX=/home/chang/android/workplace/TestAudio/jni/prebuild/speex
+
+export CC="$PREBUILT/arm-linux-androideabi-gcc"
+export LDFLAGS="--sysroot=$NDK/platforms/android-19/arch-arm/ -L$NDK/platforms/android-19/arch-arm/usr/lib"
+export CFLAGS="--sysroot=$NDK/platforms/android-19/arch-arm/"
+export AR="$PREBUILT/arm-linux-androideabi-ar"
+export RANLIB=$PREBUILT/arm-linux-androideabi-ranlib
+export ARM_LIB=$NDK/platforms/android-19/arch-arm/usr/lib/
+
+
+./configure --prefix=$PREFIX --host=arm-linux  --target=arm-linux  --disable-static --enable-fixed-point --enable-arm4-asm

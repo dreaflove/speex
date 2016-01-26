@@ -1,0 +1,14 @@
+# ogg pkg-config file
+
+prefix=/media/工作/svnroot/wisdomBox/trunk/code/Thirdparty/speex-1.2rc1/armandroidbuild
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ogg
+Description: ogg is a library for manipulating ogg bitstreams
+Version: 1.1.4
+Requires:
+Conflicts:
+Libs: -L${libdir} -logg
+Cflags: -I${includedir}
